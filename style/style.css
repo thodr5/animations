@@ -35,7 +35,7 @@ html, body {
 #banner__title {
   color: #0f926d;
   transform: scale(1);
-  transition-property: transform 300ms;
+  transition-property: transform 300ms ease-in-out;
 }
 #banner__title:hover {
   transform: scale(1.1);
