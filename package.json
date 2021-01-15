@@ -1,0 +1,19 @@
+{
+  "name": "animations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./style/main.scss:./style/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thodr5/animations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thodr5/animations/issues"
+  },
+  "homepage": "https://github.com/thodr5/animations#readme"
+}
