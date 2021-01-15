@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+@import "./base/variables.scss";
+
+@keyframes headshake {
+    25%{
+        transform: translateX($shake_intensity);
+    }
+    75%{
+        transform: translateX(-$shake_intensity);
+    }
+}
+
+html, body{
+    background-color: $body__color;
+    
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#blocksite{
+    font-family: 'Arvo', serif;
+
+    margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+#banner{
+    text-align: center;
+
+    width: 75%;
+    padding-top: 5px   ;
+
+    &__title{
+        color: $color__primary;
+
+        transform: scale(1);
+        transition-property: transform 300ms;
+        &:hover{
+            transform: scale(1.10);
+        }
+    }
+
+    &__subtitle{
+        color: $colro__tertiary;
+    }
+}
+
+#presentation{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.element{
+    //border: 1px solid white;
+    margin-top: 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--reverse{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.formulaire{
+    &__groupe{
+
+        & label{
+            text-align: center;
+            color: $colro__tertiary;
+        }
+        & input{
+            margin: 1px;
+            border-radius: 10rem;
+            border: 2px solid $color__secondary;
+            
+            outline: none;
+            padding: .5rem 1.5rem;
+            width: 80%;
+
+            transition: background-color 500ms;
+
+            &:focus{
+                border: 2px solid $color__primary;
+            }
+            &:not(:focus):invalid{
+                border: 2px solid $color__statut__false;
+                background-color: $color__statut__false;
+
+                color: $colro__tertiary;
+
+                animation: headshake 100ms cubic-bezier(.4, 1, .6, .9) 2;
+            }
+        }   
+    }
+}
+
+.bouton{
+    background-color: $color__bouton__background__before;
+    color: $color__secondary;
+
+    border: 1px solid $color__bouton__background;
+
+    font-size: 1rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10rem;
+    cursor: pointer;
+
+    transform: scale(1);
+    transition: transform 200ms, background-color 450ms 75ms;
+    &:hover{
+        transform: scale(1.15);
+        background-color: $color__bouton__background;
+    }
+
+    &:hover + .ball{
+        transform: scale(1.15);
+    }
+
+    &:hover + .box{
+        transform: scale(1);
+        }
+        span{
+            transform: translateY(0);
+        }
+    }
+
+
+.ball{
+    width: 80px;
+    height: 80px;
+    background-color: $color__secondary;
+    margin-top: 1rem;
+    border-radius: 80px;
+    transform: scale(0.1);
+    transition: transform 4000ms;
+}
+
+.box{
+    background-color: $color__secondary;
+    height: 75px;
+    width: 75px;
+    margin: 10px;
+
+    transform: scale(0.1);
+    transition: transform 330ms ease-in-out;
+    overflow: hidden;
+
+    span{
+        display: inline-block;
+        transform: translateY(250%);
+
+        transition: transform 280 ease-in-out 50ms;
+    }
+  
+}
+
+
